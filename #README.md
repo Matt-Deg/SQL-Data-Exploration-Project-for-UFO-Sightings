@@ -4,6 +4,7 @@ This repository contains various SQL Server Query Files with a variety of operat
 The main file to look at here is UFOQueries.sql, as that has the majority of the interesting and advanced calculations, and incorporates all of the other datasets. The other three query files (Global, Regional, New Jersey) were completed as side projects, and ended up being used for Tableau dashboards as well.
 
 Links to the datasets that I used for this project:
+
 UFO Sightings - https://www.kaggle.com/datasets/willianoliveiragibin/ufo-sightings
 U.S. Alcohol Consumption - https://www.kaggle.com/datasets/linzey/alcohol-consumption-us
 U.S. Employment - https://www.kaggle.com/datasets/justin2028/unemployment-in-america-per-us-state
