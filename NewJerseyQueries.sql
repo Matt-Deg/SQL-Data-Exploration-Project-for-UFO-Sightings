@@ -1,29 +1,34 @@
 USE UFOs
 
+--Ranks all 50 U.S. states by their number of UFO Sightings
 SELECT State, COUNT(State) AS Sightings, RANK() OVER (ORDER BY COUNT(State) DESC) AS Rank
 FROM [UFO Sightings]
 WHERE Country LIKE '%states%'
 GROUP BY State
 ORDER BY 2 DESC
 
+--Seasonal sightings in New Jersey
 SELECT State, Season, COUNT(Season) AS Sightings
 FROM [UFO Sightings]
 WHERE Country LIKE '%states%'
 AND State LIKE '%jersey%'
 GROUP BY State, Season
 
+--Yearly sightings in New Jersey
 SELECT State, YearOccurred, COUNT(YearOccurred) AS Sightings
 FROM [UFO Sightings]
 WHERE Country LIKE '%states%'
 AND State LIKE '%jersey%'
 GROUP BY State, YearOccurred
 
+--County Sightings in New Jersey
 SELECT State, County, COUNT(County) AS Sightings
 FROM [UFO Sightings]
 WHERE Country LIKE '%states%'
 AND State LIKE '%jersey%'
 GROUP BY State, County
 
+--Population by decade for New Jersey
 SELECT 
 State, 
 Replace(Pop1910, ',', '') AS [1910],
@@ -40,6 +45,7 @@ Replace(Pop2010, ',', '') AS [2010]
 FROM [US State Populations]
 WHERE State LIKE '%jersey%'
 
+--Cities with the most sightings in New Jersey
 SELECT State, CAST(City AS nvarchar) AS City, COUNT(CAST(City AS nvarchar)) AS Sightings
 FROM [UFO Sightings]
 WHERE Country LIKE '%states%'
@@ -50,6 +56,7 @@ GROUP BY State, CAST(City AS nvarchar)
 HAVING COUNT(CAST(City AS nvarchar)) >= 8
 ORDER BY 3 DESC
 
+--Sightings by shape in New Jersey
 SELECT State, Shape, COUNT(Shape) AS Sightings
 FROM [UFO Sightings]
 WHERE Country LIKE '%states%'
