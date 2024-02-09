@@ -1,8 +1,10 @@
 USE UFOs
 
+--Adds a region column to the UFO Sightings dataset	
 ALTER TABLE [UFO Sightings]
 ADD Region nvarchar(55) DEFAULT NULL
 
+--Sets regions for U.S.
 UPDATE [UFO Sightings]
 SET Region = 
     (CASE
@@ -21,27 +23,32 @@ SET Region =
         ELSE 'Unknown'
     END)
 
+--Looks at the newly added region column and ensures the values were updated correctly
 SELECT Distinct State, Region
 FROM [UFO Sightings]
 WHERE Country LIKE '%states%'
 Order by 1
 
+--Regional U.S. UFO Sightings
 SELECT Region, COUNT(Region) AS Sightings
 FROM [UFO Sightings]
 WHERE Region NOT LIKE 'Unknown'
 GROUP BY Region
 
+--Yearly Regional Sightings
 SELECT YearOccurred, Region, COUNT(Region) AS Sightings
 FROM [UFO Sightings]
 WHERE Region NOT LIKE 'Unknown'
 GROUP BY YearOccurred, Region
 ORDER BY 2, 1
 
+--Average duration of a UFO sighting per region
 SELECT Region, ROUND(AVG(CAST(Seconds AS float)/60/60), 2) AS Avg_Duration_Hours
 FROM [UFO Sightings]
 WHERE Region NOT LIKE 'Unknown'
 GROUP BY Region
 
+--Gets the top three sighting shapes per region
 WITH TempCTE AS (
 SELECT
 Region,
