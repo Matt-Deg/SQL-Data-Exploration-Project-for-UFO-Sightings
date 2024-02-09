@@ -1,5 +1,8 @@
 USE UFOs
+--In addition to UFOQueries.sql, I decided to look at some other areas of UFO Sightings that I left unexplored in that larger project.
+--This querying file updates and looks at data for the state of New Jersey.
 
+  
 --Ranks all 50 U.S. states by their number of UFO Sightings
 SELECT State, COUNT(State) AS Sightings, RANK() OVER (ORDER BY COUNT(State) DESC) AS Rank
 FROM [UFO Sightings]
