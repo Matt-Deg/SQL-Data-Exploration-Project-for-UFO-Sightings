@@ -1,4 +1,7 @@
 USE UFOs
+--In addition to UFOQueries.sql, I decided to look at some other areas of UFO Sightings that I left unexplored in that larger project.
+--This querying file updates and looks at regional data.
+
 
 --Adds a region column to the UFO Sightings dataset	
 ALTER TABLE [UFO Sightings]
