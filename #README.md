@@ -1,7 +1,7 @@
 # SQL-Data-Exploration-Project-for-UFO-Sightings
 This repository contains various SQL Server Query Files with a variety of operations and calculations completed on a UFO Sightings dataset. The goal of this project was to organize data pertaining to UFO sightings. These sightings were looked at in conjunction with other datasets including population, alcohol consumption, and other metrics. 
 
-The main file to look at here is UFOQueries.sql, as that has the majority of the interesting and advanced calculations, and incorporates all of the other datasets. The other three query files (Global, Regional, New Jersey) were completed as side projects, and ended up being used for Tableau dashboards as well.
+The main file to look at here is UFOQueries.sql, as that has the majority of the interesting and advanced calculations, and incorporates all of the other datasets. The other three query files (Global, Regional, New Jersey) were completed as side projects, and ended up being used for Tableau dashboards as well. There is also a Google Apps Script Javascript function that I used to generate county matchings to U.S. UFO Sightings in the dataset used.
 
 Links to the datasets that I used for this project:
 
